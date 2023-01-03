@@ -1,0 +1,208 @@
+
+* {
+  margin: 0;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.cover {
+  background-image: url(img/bg-layer.svg);
+  height: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: brown;
+
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+
+  margin-bottom: 50px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+p {
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 15px;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+nav {
+  margin-top: 25px;
+}
+
+.middle {
+  height: 400px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+
+  animation: mymove 10s infinite linear;
+}
+
+@keyframes mymove {
+  0%,
+  100% {
+    letter-spacing: 5px;
+  }
+  50% {
+    letter-spacing: 15px;
+  }
+}
+
+.main-img {
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+opacity: 1;
+  animation: image 10s infinite;
+}
+
+@keyframes image {
+  50% {
+    transform: translatey(50px);
+    opacity: 0.5;
+  }
+}
+
+.left {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+}
+
+button {
+  all: unset;
+
+  border-radius: 12px;
+  padding: 10px 15px;
+
+  display: block;
+
+  margin: 20px 0;
+  cursor: pointer;
+
+  background-color: goldenrod;
+
+  font-size: 25px;
+  transition: all 0.3s;
+
+  animation: buttonani 10s infinite;
+}
+
+button:hover {
+  padding: 8px 14px;
+  font-size: 20px;
+
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+@media (max-width: 900px) {
+  .left {
+    text-align: center;
+    position: static;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@keyframes buttonani {
+  0%,
+  100% {
+    border-radius: 15px;
+  }
+
+  50% {
+    border-radius: 5px;
+  }
+}
+
+.wave {
+  height: 143px;
+
+  position: absolute;
+  width: 100%;
+
+  bottom: 0;
+
+  background-image: url(img/wave.png);
+  animation: waveani 350s infinite;
+}
+
+@keyframes waveani {
+  0% {
+    background-position: 10000px;
+  }
+
+  50% {
+    background-position: 500px;
+  }
+
+  100% {
+    background-position: 10000px;
+  }
+}
+
+.wave::before {
+  content: "";
+  background-image: url(img/wave.png);
+  opacity: 0.5;
+
+  height: 143px;
+  position: absolute;
+  width: 100%;
+
+  bottom: 0;
+
+  animation: waveanirev 250s infinite;
+}
+
+@keyframes waveanirev {
+  0% {
+    background-position: -10000px;
+  }
+
+  50% {
+    background-position: -500px;
+  }
+
+  100% {
+    background-position: -10000px;
+  }
+}
